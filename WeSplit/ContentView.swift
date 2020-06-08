@@ -54,7 +54,14 @@ struct ContentView: View {
                 }
                 
                 Section{
-                    Text("Grand Total: $\(grandTotalCalc, specifier:"%.2f")")
+                    if (tipPercentages[tipPercentage] == 0){
+                        Text("Grand Total: $\(grandTotalCalc, specifier:"%.2f")")
+                        .foregroundColor(.red)
+                    }
+                    else{
+                        Text("Grand Total: $\(grandTotalCalc, specifier:"%.2f")")
+                        .foregroundColor(.black)
+                    }
                 }
                 
                 Section(header: Text("Amount per Person")) {
